@@ -1,74 +1,88 @@
+# AidChain Beneficiary
 
-## Description
-Convexity Humanitarian Aids Transfer Solution(CHATS) Blockchain ERC20 and ERC721 token for disbursement of fund and items to beneficiaries by Donor or NGO
+AidChain Beneficiary is the mobile client used by beneficiaries inside the AidChain ecosystem. It provides identity, wallet, transaction, campaign, and support-facing flows for end users receiving aid through the platform.
 
-## NFC FEATURE IMPLEMENTATION LOGIC
-* N/B: Before performing any read or write operations, you must authenticate the tag block sections part, 
-* nfcA.authenticateSectorWithKeyB(2, MifareClassic.KEY_DEFAULT) 
-* this block I authenticated, convers from block 7-11 I think 
+This repository is published as a clean portfolio snapshot. Project provenance is documented in [PROVENANCE.md](./PROVENANCE.md).
 
-## WRITE
-•	The Nfc tag must be have the techlist = [NfcA, miraClassic, Ndefformatable]
-•	I only write to block 8 and block 9 of the tag
-•	if the input string length is less than 16, I write to only block 8 and clear block 9
-•	else if greater than 16, I split the input string by the substring
-o	first substring is from (0,15) , second substring is (15, $length of input string)
-o	since nfc tag only supports byte array, I convert the string to byte array, using Utf8
-val dataToSend: ByteArray =
-userEmail!!.toByteArray(StandardCharsets.UTF_8)
-o	after converting both substrings to byte array, then I store the first part in block 8, and then store the second part in block 9
+## What This App Does
 
-## READ
-•	The Nfc tag returns the data as byte array, so I read from block 8 and block 9, as those are the block we are writing to.
-•	After getting the byte array from this block, we check if block 9 is empty and if its empty byte array we just return an empty string,
-•	Then we convert the byte array returned by block 8 to string using Utf_8
-•	If block 9 byte array isn’t empty, convert it to string using Utf_8 also, and add it to the string gotten from block 8 so as to have one string,
-•	The block 8 string should come first,
-•	Now since the tag has other empty blocks, it returns “?” along with the read result, so just replace “?” with “” after joining the strings of both blocks ,
+- authenticates beneficiary users against the AidChain backend
+- displays campaign and wallet-related views
+- exposes transaction history and user account data
+- supports QR and barcode-related flows
+- integrates local authentication, storage, and device services
+- includes support for geolocation, file/image capture, and account recovery flows
 
-## Contribution Guide
-**Fork the Repository:** Start by forking our repository on GitHub. This will create a copy of the project under your GitHub account.
+## Tech Stack
 
-**Set Up Your Development Environment:** Clone the forked repository to your local machine using Git. Install any necessary dependencies as specified in the project's documentation.
+- Flutter
+- Dart
+- Provider
+- Dio
+- Shared Preferences
+- JSON serialization
+- Local auth plugins
+- Barcode / QR scanning packages
+- Device and location plugins
 
-**Create a New Branch:** Create a new branch on your local machine.
+## Repository Layout
 
-**Make Changes:** Implement your desired changes or additions to the codebase. Ensure that your code follows the project's coding conventions and style guidelines.
+```text
+lib/
+  api/            API clients for auth, campaigns, transactions, complaints
+  models/         beneficiary, campaign, wallet, and transaction models
+  screens/        splash, auth, and beneficiary-facing screens
+  services/       local storage, base service, auth, and user service logic
+  providers/      provider-based state models
+  widgets/        reusable widgets and dialogs
+  utils/          UI helpers, validators, formatting, and shared utilities
+```
 
-**Test Your Changes:** Before submitting your contribution, make sure to test your changes thoroughly. Use test frameworks (Mocha or QUnit) to automate the process. Once you have run the tests, you have to analyse the results. This will help you to identify any bugs or problems. If there are bugs, fix them before proceeding to commit your changes.
+## Important Features
 
-**Commit and Push:** Commit your changes with clear and descriptive commit messages. Push your commits to the branch you created on your forked repository.
+- login and signup flows
+- beneficiary profile and account data
+- wallet and transaction views
+- campaign participation flows
+- QR or barcode-assisted workflows
+- local-device integrations for biometrics and device information
 
-**Create a Pull Request (PR):** Go to the original repository on GitHub and locate the "Pull Requests" section. Click on "New pull request" to create a new pull request from your branch to the original repository's main branch. Provide a descriptive title and a detailed description of your changes in the pull request.
+## Prerequisites
 
-**Contribution Approval and Merging:** Once your pull request has been reviewed and approved by the project maintainers, it will be merged into the main branch. Congratulations! Your contribution is now part of the project.
+- Flutter SDK compatible with Dart `>=2.16.2 <3.0.0`
+- Android Studio and/or Xcode depending on target platform
 
-Thank you for considering contributing to our open-source project on GitHub. Your contributions play a vital role in making the project successful and benefiting the CHATS community.
+## Installation
 
-## Code of conduct
-The CHATS team and community are made up of a mixture of professionals from all over the world, working on every product. To that end, we have a few ground rules that we ask people to adhere to. This code applies equally to developers and users.
+```bash
+flutter pub get
+```
 
-As contributors and maintainers of CHATS, we are committed to providing a welcoming and inclusive environment for everyone, regardless of background or identity. This code of conduct applies to all spaces managed by the CHATS community. If you believe someone is violating the code of conduct, we ask that you report it by emailing us@chats.cash.
+## Run in Development
 
-**Be respectful:** Treat all participants with respect and kindness, regardless of their personal attributes or opinions. Disagreements and debates should be conducted in a civil manner. Inclusive language: Use inclusive language and avoid any form of discriminatory, offensive, or derogatory remarks or jokes. Be mindful of your words' impact on others.
+```bash
+flutter run
+```
 
-**Open-mindedness:** Embrace diversity and be open to different ideas, perspectives, and experiences. Foster an environment that encourages collaboration, creativity, and learning from one another.
+## Build
 
-**Be constructive:** Provide constructive feedback and engage in discussions that aim to improve the CHATS. Critique ideas, not individuals, and always assume good intentions from others. Respect privacy and boundaries: Obtain consent before sharing personal information about others. Respect the privacy and boundaries of fellow contributors and users.
+Example Android release build:
 
-**Report and address issues:** If you witness or experience any behavior that violates this code of conduct, promptly report it to the project maintainers. They are committed to maintaining a safe and inclusive community and will take appropriate action to address the issue.
+```bash
+flutter build appbundle --release --no-sound-null-safety
+```
 
-**No harassment or discrimination:** Harassment, discrimination, or any form of unwelcome behavior based on factors such as race, ethnicity, gender, sexual orientation, disability, religion, or any other protected characteristic will not be tolerated.
+The project also defines a helper script entry in `pubspec.yaml` for bundle generation.
 
-**Comply with applicable laws:** Ensure that your actions and contributions comply with all applicable laws and regulations.
+## Assets and Fonts
 
-By participating in the CHATS project, you agree to follow this code of conduct throughout all project activities, both online and offline, and in all interactions related to CHATS.
+The app bundles custom fonts and image assets declared in `pubspec.yaml`, including Gilroy font families and branded login/application assets.
 
-## License
-Copyright (C) 2023 Convexity CVA Inc.
+## Backend Dependency
 
-This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+This mobile app depends on `AidChainPlatform/aid-api` for authentication, campaigns, wallet data, and transaction flows.
 
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
+## Notes
 
-You should have received a copy of the GNU Affero General Public License along with this program. If not, see https://www.gnu.org/licenses/.
+- The repo includes mobile assets, platform folders, and Flutter-specific configuration for Android and iOS.
+- The published org repository is a clean snapshot without prior git history.
