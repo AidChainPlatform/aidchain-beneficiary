@@ -1,0 +1,8 @@
+{
+  "cSpell.ignoreWords": [
+    "datetime",
+    "flutter",
+    "picker"
+  ],
+  "dart.flutterSdkPath": ".fvm/versions/3.0.0"
+}

@@ -1,0 +1,101 @@
+PODS:
+  - barcode_scan2 (0.0.1):
+    - Flutter
+    - MTBBarcodeScanner
+    - SwiftProtobuf
+  - device_info_plus (0.0.1):
+    - Flutter
+  - Flutter (1.0.0)
+  - flutter_barcode_scanner (2.0.0):
+    - Flutter
+  - flutter_local_auth_invisible (0.0.1):
+    - Flutter
+  - geocoder (0.0.1):
+    - Flutter
+  - image_picker_ios (0.0.1):
+    - Flutter
+  - location (0.0.1):
+    - Flutter
+  - MTBBarcodeScanner (5.0.11)
+  - path_provider_foundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
+  - permission_handler_apple (9.1.1):
+    - Flutter
+  - shared_preferences_foundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
+  - SwiftProtobuf (1.15.0)
+  - unique_identifier (0.0.1):
+    - Flutter
+  - url_launcher_ios (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - barcode_scan2 (from `.symlinks/plugins/barcode_scan2/ios`)
+  - device_info_plus (from `.symlinks/plugins/device_info_plus/ios`)
+  - Flutter (from `Flutter`)
+  - flutter_barcode_scanner (from `.symlinks/plugins/flutter_barcode_scanner/ios`)
+  - flutter_local_auth_invisible (from `.symlinks/plugins/flutter_local_auth_invisible/ios`)
+  - geocoder (from `.symlinks/plugins/geocoder/ios`)
+  - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
+  - location (from `.symlinks/plugins/location/ios`)
+  - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/ios`)
+  - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
+  - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/ios`)
+  - unique_identifier (from `.symlinks/plugins/unique_identifier/ios`)
+  - url_launcher_ios (from `.symlinks/plugins/url_launcher_ios/ios`)
+
+SPEC REPOS:
+  trunk:
+    - MTBBarcodeScanner
+    - SwiftProtobuf
+
+EXTERNAL SOURCES:
+  barcode_scan2:
+    :path: ".symlinks/plugins/barcode_scan2/ios"
+  device_info_plus:
+    :path: ".symlinks/plugins/device_info_plus/ios"
+  Flutter:
+    :path: Flutter
+  flutter_barcode_scanner:
+    :path: ".symlinks/plugins/flutter_barcode_scanner/ios"
+  flutter_local_auth_invisible:
+    :path: ".symlinks/plugins/flutter_local_auth_invisible/ios"
+  geocoder:
+    :path: ".symlinks/plugins/geocoder/ios"
+  image_picker_ios:
+    :path: ".symlinks/plugins/image_picker_ios/ios"
+  location:
+    :path: ".symlinks/plugins/location/ios"
+  path_provider_foundation:
+    :path: ".symlinks/plugins/path_provider_foundation/ios"
+  permission_handler_apple:
+    :path: ".symlinks/plugins/permission_handler_apple/ios"
+  shared_preferences_foundation:
+    :path: ".symlinks/plugins/shared_preferences_foundation/ios"
+  unique_identifier:
+    :path: ".symlinks/plugins/unique_identifier/ios"
+  url_launcher_ios:
+    :path: ".symlinks/plugins/url_launcher_ios/ios"
+
+SPEC CHECKSUMS:
+  barcode_scan2: f80517f040989095c9b5067be77649bf6114442c
+  device_info_plus: d668d0dcad87727e865495c472b911b15d7ee26a
+  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  flutter_barcode_scanner: c5aa9f51c150a6242fa392386bd52b64bb27fcb5
+  flutter_local_auth_invisible: 234c1ff1740c9a177450f2c1afa4d250b10c8a06
+  geocoder: bfb6ce12b3e2aeba918f6980fd8c9ce2a225a1f6
+  image_picker_ios: 9ce303ae0f9b3699956bfb2fc7f15627c43168f9
+  location: 270786085f436c3740dcfa807d11b8b5a70f4425
+  MTBBarcodeScanner: f453b33c4b7dfe545d8c6484ed744d55671788cb
+  path_provider_foundation: 9b2865ae0d177584c376882d93e61be1e80b9e39
+  permission_handler_apple: 3787117e48f80715ff04a3830ca039283d6a4f29
+  shared_preferences_foundation: 84ce365ee5ce19a94de8ece53db7142d35141a5b
+  SwiftProtobuf: 3320217e9d8fb75f36b40282e78c482640fd75dd
+  unique_identifier: 759d781cf134d96de2161628a1d52014df19599c
+  url_launcher_ios: 11b43d60fcf5780032024bc078747c5086d8c084
+
+PODFILE CHECKSUM: d68fc9b2a922e5b9136e460a1c2b607ab9692165
+
+COCOAPODS: 1.16.2
